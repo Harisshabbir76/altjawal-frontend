@@ -1,0 +1,74 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
+import ConditionalLayout from "./components/ConditionalLayout";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const ivyPresto = localFont({
+  src: "../fonts/ivy-presto-headline-light.otf",
+  variable: "--font-ivy-presto",
+  display: "swap",
+  weight: "300",
+});
+
+const tajawal = localFont({
+  src: [
+    { path: "../fonts/Tajawal/Tajawal-Light.ttf",     weight: "300" },
+    { path: "../fonts/Tajawal/Tajawal-Regular.ttf",   weight: "400" },
+    { path: "../fonts/Tajawal/Tajawal-Medium.ttf",    weight: "500" },
+    { path: "../fonts/Tajawal/Tajawal-Bold.ttf",      weight: "700" },
+    { path: "../fonts/Tajawal/Tajawal-ExtraBold.ttf", weight: "800" },
+  ],
+  variable: "--font-tajawal",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Al Tjawal Events",
+  description: "Al Tjawal Events — Premium event management, production, and branding services across the UAE.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${ivyPresto.variable} ${tajawal.variable} h-full antialiased`}
+    >
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,100;1,9..40,200;1,9..40,300&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" />
+      </head>
+      <body className="min-h-full flex flex-col">
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </body>
+    </html>
+  );
+}

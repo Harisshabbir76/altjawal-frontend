@@ -1,0 +1,397 @@
+/* ── Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #2d3d35;
+  min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar--bordered {
+  border-bottom: 2px solid rgba(239, 236, 227, 0.5);
+  padding-bottom: 12px;
+}
+
+.navbar--dark.navbar--bordered {
+  border-bottom: 2px solid rgba(56, 68, 62, 0.5);
+}
+
+.navbar--dark .nav-link,
+.navbar--dark .dropdown-toggle,
+.navbar--dark .book-now {
+  color: #38443E;
+  font-weight: 300;
+}
+
+.navbar--dark .dropdown-item {
+  color: #38443E;
+}
+
+.navbar--dark .dropdown-menu {
+  background-color: #EFECE3;
+}
+
+.navbar--dark .dropdown-item:hover {
+  background-color: rgba(56, 68, 62, 0.1);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  padding: 0 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ── Left & Right link groups ── */
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  flex: 0 1 auto;
+}
+
+.nav-left {
+  justify-content: flex-end;
+  margin-right: 3rem;
+}
+
+.nav-right {
+  justify-content: flex-start;
+  margin-left: 3rem;
+}
+
+/* ── Center logo ── */
+.nav-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo-img {
+  height: 58px;
+  width: auto;
+  display: block;
+}
+
+/* ── Nav links ── */
+.nav-link {
+  color: #EDE1CB;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* ── Services dropdown ── */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.6rem;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 70%;
+  transform: translateX(-50%);
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  color: #EDE1CB;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Book Now button ── */
+.book-now {
+  padding: 0.45rem 1.1rem;
+  border-radius: 2px;
+}
+
+.book-now:hover {
+  background-color: rgba(232, 217, 191, 0.12);
+  opacity: 1;
+}
+
+/* ── Mobile-only elements (hidden on desktop) ── */
+.hamburger,
+.mobile-book-now {
+  display: none;
+}
+
+/* ── Sidebar ── */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 2000;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #38443E;
+  width: 280px;
+  max-width: 80vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.75rem;
+  position: relative;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: #e8d9bf;
+  font-size: 1.25rem;
+  cursor: pointer;
+  align-self: flex-end;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-close:hover {
+  opacity: 0.7;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.sidebar-link {
+  color: #e8d9bf;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(232, 217, 191, 0.15);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: opacity 0.2s ease;
+  display: block;
+  width: 100%;
+}
+
+.sidebar-link:hover {
+  opacity: 0.7;
+}
+
+.sidebar-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-dropdown-item {
+  color: #e8d9bf;
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 0 0.75rem 1rem;
+  border-bottom: 1px solid rgba(232, 217, 191, 0.1);
+  transition: opacity 0.2s ease;
+  display: block;
+}
+
+.sidebar-dropdown-item:hover {
+  opacity: 0.7;
+}
+
+/* ── Mobile dark theme (main-services, event-production, branding-services, legal) ── */
+@media (max-width: 767px) {
+  .navbar--dark .hamburger span {
+    background-color: #38443E;
+  }
+
+  .navbar--dark .mobile-book-now {
+    color: #38443E;
+    border-color: #38443E;
+  }
+}
+
+/* ── Tablet: 768px – 1023px (same layout, slightly condensed) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar-inner {
+    padding: 0 1.5rem;
+  }
+
+  .nav-left {
+    gap: 1.5rem;
+    margin-right: 1.75rem;
+  }
+
+  .nav-right {
+    gap: 1.5rem;
+    margin-left: 1.75rem;
+  }
+
+  .nav-logo-img {
+    height: 50px;
+  }
+}
+
+/* ── Mobile: < 768px ── */
+@media (max-width: 767px) {
+  .navbar-inner {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-top: -20px;
+  }
+
+  /* Hide desktop nav groups */
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  /* Show hamburger on the left */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.25rem;
+    flex-shrink: 0;
+    z-index: 10;
+    order: 0;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: #e8d9bf;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* Logo stays centered */
+  .nav-logo {
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
+    order: 1;
+  }
+
+  .nav-logo-img {
+    height: 48px;
+  }
+
+  /* Book Now stays on the right */
+  .mobile-book-now {
+    display: inline-block;
+    color: #e8d9bf;
+    text-decoration: none;
+    font-size: 0.62rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    border: 1px solid #e8d9bf;
+    padding: 0.4rem 0.7rem;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+    font-family: inherit;
+    order: 2;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+
+  .mobile-book-now:hover {
+    background-color: rgba(232, 217, 191, 0.12);
+  }
+}
+
+/* ── Large screens: > 1400px ── */
+@media (min-width: 1401px) {
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .dropdown-item {
+    font-size: 15px;
+  }
+}
+
+/* ── Very small screens ── */
+@media (max-width: 360px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  .mobile-book-now {
+    font-size: 0.58rem;
+    padding: 0.35rem 0.55rem;
+  }
+}

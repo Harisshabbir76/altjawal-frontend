@@ -1,0 +1,224 @@
+/* ── Tradition Section ── */
+.tradition-section {
+  background-color: #F0EAE0;
+  padding: 30px 0 30px;
+}
+
+/* ── Text block ── */
+.tradition-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem 60px;
+  gap: 1.1rem;
+}
+
+.tradition-heading {
+  font-family: var(--font-ivy-presto), serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: #38443E;
+  line-height: 2;
+  margin: 0;
+  max-width: 600px;
+}
+
+.tradition-paragraph {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  color: #000000;
+  letter-spacing: 0.01em;
+  margin: 0;
+  max-width: 600px;
+}
+
+.tradition-button {
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1;
+  text-transform: uppercase;
+  color: #1F150F;
+  border: 1px solid #000000;
+  text-decoration: none;
+  padding: 3px 20px;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tradition-button {
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tradition-button:hover {
+  background-color: #38443E;
+  color: #EDE1CB;
+  border-color: #38443E;
+}
+
+/* ── Image block ── */
+.tradition-image-wrap {
+  position: relative;
+  width: calc(100% - 10rem);
+  margin: 0 5rem;
+  height: 220px;
+  overflow: hidden;
+}
+
+.tradition-img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* ── Tablet: 768px – 1023px ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tradition-heading {
+    font-size: 28px;
+    max-width: 480px;
+  }
+
+  .tradition-paragraph {
+    max-width: 500px;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 6rem);
+    margin: 0 3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 825px) {
+  .tradition-heading {
+    font-size: 32px;
+    max-width: 600px;
+  }
+
+  .tradition-paragraph {
+    max-width: 535px;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 8rem);
+    margin: 0 4rem;
+    height: 200px;
+  }
+}
+
+/* ── Mobile: < 768px ── */
+@media (max-width: 767px) {
+
+  .tradition-heading {
+    font-size: 24px;
+    max-width: 100%;
+  }
+
+  .tradition-paragraph
+  {
+    max-width: 85%;
+    font-size: 12px;
+  }
+  .tradition-button{
+      font-size: 12px;
+    }
+
+  .tradition-image-wrap {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem;
+    height: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tradition-heading {
+    font-size: 22px;
+    max-width: 100%;
+  }
+
+  .tradition-paragraph {
+    max-width: 95%;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    height: 160px;
+  }
+}
+
+@media (max-width: 580px) {
+  .tradition-heading {
+    font-size: 22px;
+    max-width: 100%;
+  }
+
+  .tradition-paragraph {
+    max-width: 85%;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 1.5rem);
+    margin: 0 0.75rem;
+    height: 140px;
+  }
+}
+
+@media (max-width: 450px) {
+  .tradition-heading {
+    font-size: 22px;
+    max-width: 90%;
+    line-height: 1.3;
+  }
+
+  .tradition-paragraph {
+    max-width: 100%;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem;
+    height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .tradition-heading {
+    font-size: 20px;
+    max-width: 90%;
+    line-height: 1.3;
+  }
+
+  .tradition-paragraph {
+    max-width: 100%;
+  }
+
+  .tradition-image-wrap {
+    width: calc(100% - 0.5rem);
+    margin: 0 0.25rem;
+    height: 100px;
+  }
+}
+
+/* ── Large screens: > 1400px ── */
+@media (min-width: 1401px) {
+  .tradition-heading {
+    font-size: 45px;
+    max-width: 720px;
+  }
+
+  .tradition-paragraph {
+    font-size: 16px;
+    max-width: 710px;
+  }
+
+  .tradition-button {
+    font-size: 16px;
+  }
+
+  .tradition-image-wrap {
+    height: 330px;
+  }
+}
